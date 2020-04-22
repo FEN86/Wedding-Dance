@@ -7,13 +7,33 @@
     $('.main-nav').removeClass('active');
   });
 
-  // $('.slider-cards').slick({
-  //   arrows: false,
-  //   slidesToShow: 3,
-  //   slidesToScroll: 1,
-  //   lazyLoad: 'ondemand',
-  //   infinite: false
-  // });
+  $('.slider-cards').slick({
+    mobileFirst: true,
+    arrows: false,
+    slidesToShow: 1.2,
+    lazyLoad: 'ondemand',
+    infinite: false,
+    adaptiveHeight: true,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 901,
+        settings: "unslick"
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2.5
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2
+        }
+      },
+    ]
+  });
 
   var $coachesSlider = $('.coaches-slider').slick({
     arrows: true,
@@ -25,14 +45,42 @@
       {
         breakpoint: 1200,
         settings: {
-          slidesToShow: 1.5,
-          slidesToScroll: 1
+          slidesToShow: 2,
+          slidesToScroll: 2
         }
       },
       {
-        breakpoint: 1200,
+        breakpoint: 900,
         settings: {
-          slidesToShow: 1.2
+          slidesToShow: 2.5,
+          dots: true,
+          arrows: false
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          dots: true,
+          arrows: false
+        }
+      },
+      {
+        breakpoint: 580,
+        settings: {
+          slidesToShow: 1.5,
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1.2,
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false
         }
       },
     ]
